@@ -10,7 +10,7 @@ Ouvrir `index.html` dans un navigateur pour consulter le site directement. Pour 
 python -m http.server 8000
 ```
 
-Ouvrir ensuite `http://localhost:8000`. `cv.html` présente une version publique imprimable du CV ; le téléchargement utilise `assets/cv-mihanta-public.pdf`, recréé sans âge, situation matrimoniale, adresse précise ni téléphone.
+Ouvrir ensuite `http://localhost:8000`. Sur Windows, `./start-preview.ps1` lance aussi un aper?u ? `http://127.0.0.1:8765/` avec Python. Utiliser cette adresse plut?t que le fichier HTML pour regarder les vid?os dans le portfolio. `cv.html` présente une version publique imprimable du CV ; le téléchargement utilise `assets/cv-mihanta-public.pdf`, recréé sans âge, situation matrimoniale, adresse précise ni téléphone.
 
 ## Organisation
 
@@ -22,6 +22,10 @@ Ouvrir ensuite `http://localhost:8000`. `cv.html` présente une version publique
 - `.github/workflows/pages.yml` : publication avec une liste explicite de fichiers publics.
 
 Les liens locaux commencent par `./` et fonctionnent dans un sous-dossier GitHub Pages. Aucun backend, aucune clé et aucun service de collecte de données. Les polices sont auto-hébergées : Open Sans et Architects Daughter sous SIL OFL ; Permanent Marker sous Apache 2.0, alternative à WC Mano Negra Bta Bold dont la licence n'est pas fournie.
+
+Dans « Dans mon carnet », les aperçus ALALINO et prix VBG ouvrent un lecteur YouTube à la demande. Un lien permet aussi d'ouvrir chaque vidéo directement sur YouTube si l'intégration est indisponible. Fermer la fenêtre supprime le lecteur. Le portrait Avana est recadré à la même hauteur que les autres cartes. Au clic, une fenêtre affiche l'image complète et un bouton pour accéder à la publication LinkedIn et à ses commentaires. Aucun contenu des commentaires n'est recopié.
+
+Le lecteur intégré nécessite une page servie en HTTP ou HTTPS (Live Server, serveur local ou GitHub Pages). En ouvrant directement `index.html` en `file://`, les aperçus ouvrent YouTube dans un nouvel onglet pour éviter l'erreur 153. Cette erreur signale un référent HTTP manquant, pas nécessairement un problème avec la vidéo. Le lecteur utilise la véritable origine du site et la politique `strict-origin-when-cross-origin` ; aucune origine fictive n'est fournie.
 
 ## Publier sur GitHub Pages
 

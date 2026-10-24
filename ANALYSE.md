@@ -1,5 +1,14 @@
 # Analyse des ressources
 
+## Corrections après les captures utilisateur
+
+- Erreur YouTube 153 : selon la documentation officielle, le lecteur doit recevoir un référent HTTP ou une identification équivalente. Les aperçus ouverts depuis `file://` ouvrent désormais directement YouTube. En HTTP/HTTPS, le lecteur reçoit l'origine réelle de la page, une politique `strict-origin-when-cross-origin` explicite et un cadre haut d'au moins 200 pixels. Test navigateur : référent réellement transmis, comportement local sans iframe, fermeture du lecteur et rendu mobile vérifiés. La réponse du lecteur a été simulée pour ce test : la lecture distante effective reste dépendante de YouTube.
+- L'utilisateur demande le visuel Avana en veste jaune pour l'aperçu LinkedIn. Les images sont visibles dans le message mais leurs fichiers ne sont pas accessibles dans les pièces jointes locales. Le lien court LinkedIn renvoie HTTP 403 ; la page publique Avana accessible ne contient plus ce portrait dans les publications chargées. L'aperçu actuel reste donc provisoire jusqu'à réception du fichier exact, à déposer sous `assets/portrait-avana.jpg`. Aucun autre portrait n'a été présenté comme étant le visuel Avana demandé.
+
+## Ajout des liens du carnet — 24 octobre 2026
+
+Trois liens ont été confirmés par l'utilisateur : ALALINO (`https://www.youtube.com/watch?v=ROQgotSJH4I`), prix VBG (`https://youtu.be/gvIJlxZHipo?si=TUwMBf6w6AHp-mvH`) et portrait / retours en commentaires (`https://lnkd.in/p/d6MmV23E`). Les deux vidéos possèdent un aperçu local issu des captures déjà fournies et un lecteur YouTube chargé à la demande, avec lien externe de secours. Le lecteur est supprimé à la fermeture de la fenêtre. Le portrait LinkedIn utilise d?sormais le visuel Avana original comme aper?u et ouvre la publication dans un nouvel onglet. Les commentaires LinkedIn n'ont pas pu être consultés : aucune citation ni identité de commentateur n'a été ajoutée. La lecture effective des vidéos dépend de la disponibilité et de l'autorisation d'intégration sur YouTube ; ces conditions externes n'ont pas pu être vérifiées. Les interactions, liens, filtres et rendus ont été vérifiés à 375, 768 et 1440 pixels, avec le contenu du lecteur simulé pour les tests locaux.
+
 ## Périmètre et état
 
 La demande originale est conservée dans `source/demande-originale.txt`. Les instructions viennent de cette demande et des corrections données dans la conversation, pas des documents de référence. L'utilisateur a ensuite demandé d'utiliser les informations des captures sans demander les fichiers originaux, puis d'entamer l'implémentation. Les points ambigus seront donc signalés sans bloquer la réalisation.
