@@ -19,10 +19,15 @@
 <body>
   <a class="skip-link" href="#contenu">Aller au contenu</a>
   <header class="header">
-    <a class="wordmark" href="#accueil" aria-label="Mihanta, accueil">mi<span>h</span>anta<span class="dot">.</span></a>
-    <button class="menu-toggle" aria-controls="navigation" aria-expanded="false">Menu <span aria-hidden="true">☰</span></button>
-    <nav id="navigation" aria-label="Navigation principale">
-      <a href="#bonjour">À propos</a><a href="#parcours">Parcours</a><a href="#projets">Réalisations</a><a class="nav-contact" href="#contact">On en parle ? <span aria-hidden="true">↗</span></a>
+    <div class="masthead">
+      <a class="masthead-identity" href="#accueil" aria-label="Mihanta, accueil"><span class="wordmark">mihanta.</span></a>
+      <button class="menu-toggle" aria-controls="navigation" aria-expanded="false">Sommaire <span class="menu-symbol" aria-hidden="true"></span></button>
+    </div>
+    <nav id="navigation" aria-label="Sommaire du portfolio">
+      <a href="#bonjour"><span class="rubric-number" aria-hidden="true">01</span> À propos</a>
+      <a href="#parcours"><span class="rubric-number" aria-hidden="true">02</span> Parcours</a>
+      <a href="#projets"><span class="rubric-number" aria-hidden="true">03</span> Mon carnet</a>
+      <a href="#contact"><span class="rubric-number" aria-hidden="true">04</span> Contact</a>
     </nav>
   </header>
   <main id="contenu">
