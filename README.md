@@ -47,9 +47,18 @@ Le workflow n'envoie que les pages, CSS, JavaScript et `assets/`. Il exclut expl
 ## Avant publication
 
 - Confirmer le début du poste de chef d'édition KOLO : 2016 ou 2019. Le site et les deux versions publiques du CV indiquent `[À VÉRIFIER]`.
-- Fournir des exemples de newsletters : la page Canva correspondante est vide ; `[À COMPLÉTER]` est affiché.
-- Confirmer l'autorat des publications repartagées. Elles sont décrites comme des exemples issus de repartages, sans attribuer de résultats personnels.
+- Ajouter les deux exemples de newsletters et les captures de témoignages lorsque l’utilisateur les transmettra. Aucun emplacement provisoire n’est affiché sur le site.
 - Valider les citations anonymisées de messages privés avant diffusion publique.
 - Préciser la relation entre Avana et Ergomada et fournir une URL Facebook personnelle, si souhaité. Aucun lien n'est deviné depuis le nom « Mih Rav ».
 
 Les captures contenant des coordonnées de tiers ne sont pas publiées. Les exemples de marque utilisent uniquement la partie photographique des captures extraites du Canva. Les photos de concours utilisent les légendes du Canva pour leur contexte.
+
+## Correctifs ACCUEIL.docx — 25 octobre 2026
+
+Positionnement Community Manager et rédactrice web, textes d’accueil, présentation, cinq compétences et contact repris du document. Les compétences précèdent les réalisations. Le carnet contient les dix liens fournis : cinq publications, deux carrousels, un article Hapo et deux fiches produits La Madeleine Déco. Les liens sont intégrés tels que fournis, sans vérification de leur disponibilité sur les plateformes externes.
+
+Les vidéos journalistiques et les distinctions viennent après les réalisations de communication. Le portrait Avana apparaît en première position dans « Dans mon carnet », suivi des dix exemples et de la newsletter. Une ligne est visible par défaut, avec un bouton « Voir plus » centré. Les trois témoignages conservent leur texte. Les captures et exemples de newsletters seront intégrés lors de leur réception, conformément à la réponse de l’utilisateur.
+
+Les dix exemples disposent chacun d’une carte visuelle au même format, inspirée de la vignette « Des mots qui créent du lien ». Le lien externe porte sur toute la carte. La newsletter reprend le même format visuel, sans lien tant que les exemples ne sont pas fournis. Les vignettes typographiques sont des habillages du portfolio ; elles ne remplacent pas les captures originales des publications.
+
+Vérification locale avec Playwright et Edge : largeurs de 375, 768 et 1440 pixels sans débordement, images chargées, filtres, fenêtres du portrait et des vidéos, menu mobile, ancres et absence d’erreurs JavaScript. Aucun déploiement effectué.

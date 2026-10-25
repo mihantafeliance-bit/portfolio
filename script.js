@@ -5,10 +5,39 @@ menu.addEventListener('click', () => { const open = menu.getAttribute('aria-expa
 navigation.addEventListener('click', event => { if (event.target.closest('a')) closeMenu(); });
 document.addEventListener('keydown', event => { if (event.key === 'Escape' && menu.getAttribute('aria-expanded') === 'true') { closeMenu(); menu.focus(); } });
 
+const projectCards = [...document.querySelectorAll('#projets [data-category]')];
+const moreProjects = document.querySelector('#more-projects');
+const mobileProjects = window.matchMedia('(max-width: 700px)');
+let projectFilter = 'all';
+let projectsExpanded = false;
+
+function updateProjects() {
+  const rowSize = mobileProjects.matches ? 1 : 2;
+  let matchingCount = 0;
+  projectCards.forEach(card => {
+    const matches = projectFilter === 'all' || card.dataset.category === projectFilter;
+    if (matches) matchingCount++;
+    card.hidden = !matches || (!projectsExpanded && matchingCount > rowSize);
+  });
+  moreProjects.hidden = matchingCount <= rowSize;
+  moreProjects.setAttribute('aria-expanded', String(projectsExpanded));
+  moreProjects.querySelector('.more-label').textContent = projectsExpanded ? 'Voir moins' : 'Voir plus';
+  moreProjects.querySelector('.more-symbol').textContent = projectsExpanded ? '−' : '+';
+}
+
 document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => {
   document.querySelectorAll('[data-filter]').forEach(item => { const active = item === button; item.classList.toggle('active', active); item.setAttribute('aria-pressed', String(active)); });
-  document.querySelectorAll('[data-category]').forEach(card => { card.hidden = button.dataset.filter !== 'all' && card.dataset.category !== button.dataset.filter; });
+  projectFilter = button.dataset.filter;
+  projectsExpanded = false;
+  updateProjects();
 }));
+moreProjects.addEventListener('click', () => {
+  projectsExpanded = !projectsExpanded;
+  updateProjects();
+  if (!projectsExpanded) moreProjects.focus({ preventScroll: false });
+});
+mobileProjects.addEventListener('change', updateProjects);
+updateProjects();
 
 const projects = {
   manufacture: ['Faire rayonner un savoir-faire', 'La capture montre une publication de la Manufacture des Cévennes repartagée par Mihanta le 9 octobre 2026. Elle annonce sa sélection parmi les 104 lauréats de la Grande Exposition du Fabriqué en France, prévue les 21 et 22 novembre 2026 au Palais de l’Élysée. Le contenu valorise un siège né dans les Cévennes et le savoir-faire de l’entreprise. Cette sélection récompense la Manufacture, et ne constitue pas un prix attribué à Mihanta.'],
